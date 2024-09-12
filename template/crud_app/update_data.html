@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="{% url 'save_update_data' sd.id %}" method="post">
+                    {% csrf_token %}
+                    <h1>Update Form</h1>
+                    <label for="fname">Enter First Name</label>
+                    <input type="text" name="fname" value="{{ sd.fname }}" class="form-control">
+                    
+                    <label for="lname">Enter Last Name</label>
+                    <input type="text" name="lname" value="{{ sd.lname }}" class="form-control">
+                    
+                    <label for="mobile">Enter Mobile</label>
+                    <input type="number" name="mobile" value="{{ sd.mobile }}" class="form-control">
+                    
+                    <label for="email">Enter Email</label>
+                    <input type="email" name="email" value="{{ sd.email }}" class="form-control">
+                    
+                    <label for="marks1">Enter Marks 1</label>
+                    <input type="number" name="marks1" value="{{ sd.marks1 }}" class="form-control">
+                    
+                    <label for="marks2">Enter Marks 2</label>
+                    <input type="number" name="marks2" value="{{ sd.marks2 }}" class="form-control">
+                    
+                    <label for="marks3">Enter Marks 3</label>
+                    <input type="number" name="marks3" value="{{ sd.marks3 }}" class="form-control">
+                    
+                    <label for="marks4">Enter Marks 4</label>
+                    <input type="number" name="marks4" value="{{ sd.marks4 }}" class="form-control">
+                    <br>
+                    <center>
+                        <input type="Submit" value="Submit" class="btn btn-success">
+                        <input type="Reset" value="Clear" class="btn btn-danger">
+                    </center>    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
